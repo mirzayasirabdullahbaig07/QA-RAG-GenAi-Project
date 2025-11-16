@@ -47,38 +47,16 @@ GEN_MODEL = "gemini-2.0-flash"            # generation model
 # -------------------------
 # UI styling
 # -------------------------
-st.set_page_config(page_title="RAG URL Q&A — Mirza Yasir Abdullah Baig", page_icon="🤖", layout="wide")
+st.set_page_config(page_title="RAG URL Q&A — Streamlit + Gemini", page_icon="🤖", layout="wide")
 
 st.markdown(
     """
     <style>
-    /* Page container padding */
     .main > .block-container { padding: 2rem 3rem; }
-
-    /* Light grey background for the entire app */
-    .stApp { background-color: #f0f0f0; color: #0b2545; }
-
-    /* Markdown, text, input fields */
-    .stMarkdown, .stText, .stTextInput>div>input { color: #0b2545 !important; }
-
-    /* Buttons: white text on blue background */
-    .stButton>button, button[kind] {
-        color: #ffffff !important;
-        background-color: #0b2545 !important;
-        border: none !important;
-    }
-
-    /* Card style */
-    .card { 
-        background: white; 
-        color: #0b2545; 
-        padding: 1rem; 
-        border-radius: 12px; 
-        box-shadow: rgba(0,0,0,0.1) 0px 8px 24px; 
-    }
-
-    /* Muted text style */
-    .muted { color: #6b7280; }
+    .stApp { background: linear-gradient(180deg, #0b2545 0%, #07203a 100%); color: white; }
+    .stMarkdown, .stText, .stButton>button, .stTextInput>div>input { color: #ffffff !important; }
+    .card { background: white; color: #0b2545; padding: 1rem; border-radius: 12px; box-shadow: rgba(2,6,23,0.4) 0px 8px 24px; }
+    .muted { color: #cbd5e1; }
     </style>
     """,
     unsafe_allow_html=True,
@@ -316,3 +294,4 @@ if answer_btn:
                     st.write(answer_text)
                 except Exception as e:
                     st.error(f"Generation error: {e}")
+ 
